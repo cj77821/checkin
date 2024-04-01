@@ -1,5 +1,5 @@
-const glados = async () => {
-  const cookie = process.env.GLADOS
+const glados = async (gladosValue) => {
+  const cookie = process.env[gladosValue];
   if (!cookie) return
   try {
     const headers = {
@@ -46,7 +46,8 @@ const notify = async (contents) => {
 }
 
 const main = async () => {
-  await notify(await glados())
+  await notify(await glados("GLADOS"))
+  await notify(await glados("GLADOS_4108"))
 }
 
 main()
