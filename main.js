@@ -1,6 +1,11 @@
 const glados = async (gladosValue, account) => {
   const cookie = process.env[gladosValue];
-  if (!cookie) return
+  if (!cookie) 
+    return [
+      'Checkin Error',
+      account,
+      'gladosValue is null' 
+    ]
   try {
     const headers = {
       'cookie': cookie,
