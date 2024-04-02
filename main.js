@@ -1,4 +1,4 @@
-const glados = async (gladosValue) => {
+const glados = async (gladosValue, account) => {
   const cookie = process.env[gladosValue];
   if (!cookie) return
   try {
@@ -24,6 +24,7 @@ const glados = async (gladosValue) => {
   } catch (error) {
     return [
       'Checkin Error',
+      account,
       `${error}`,
       `<${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}>`,
     ]
@@ -46,8 +47,8 @@ const notify = async (contents) => {
 }
 
 const main = async () => {
-  await notify(await glados("GLADOS"))
-  await notify(await glados("GLADOS_4108"))
+  await notify(await glados("GLADOS", "2424"))
+  await notify(await glados("GLADOS_4108", "4108"))
 }
 
 main()
