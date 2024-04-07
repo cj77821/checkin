@@ -24,6 +24,7 @@ const glados = async (gladosValue, account) => {
     return [
       'Checkin OK',
       account, 
+      cookie,
       `${checkin.message}`,
       `Left Days ${Number(status.data.leftDays)}`,
     ]
@@ -31,6 +32,7 @@ const glados = async (gladosValue, account) => {
     return [
       'Checkin Error',
       account,
+      cookie,
       `${error}`,
       `<${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}>`,
     ]
