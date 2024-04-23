@@ -19,4 +19,5 @@ jobs:
         env:
           GLADOS: ${{ secrets.GLADOS }}
           GLADOS_4108: ${{ secrets.GLADOS_4108 }}
+          GLADOS_cool: ${{ secrets.GLADOS_cool }}
           NOTIFY: ${{ secrets.NOTIFY }}
