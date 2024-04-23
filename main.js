@@ -24,7 +24,6 @@ const glados = async (gladosValue, account) => {
     return [
       'Checkin OK',
       account, 
-      cookie,
       `${checkin.message}`,
       `Left Days ${Number(status.data.leftDays)}`,
     ]
@@ -32,7 +31,6 @@ const glados = async (gladosValue, account) => {
     return [
       'Checkin Error',
       account,
-      cookie,
       `${error}`,
       `<${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}>`,
     ]
@@ -57,6 +55,7 @@ const notify = async (contents) => {
 const main = async () => {
   await notify(await glados("GLADOS", "2424"))
   await notify(await glados("GLADOS_4108", "4108"))
+  await notify(await glados("GLADOS_cool", "cool"))
 }
 
 main()
