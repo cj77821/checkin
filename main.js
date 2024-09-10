@@ -54,8 +54,8 @@ const notify = async (contents) => {
 
 const main = async () => {
   await notify(await glados("GLADOS", "2424"))
-  await notify(await glados("GLADOS_4108", "4108"))
-  await notify(await glados("GLADOS_cool", "cool"))
+  // await notify(await glados("GLADOS_4108", "4108"))
+  // await notify(await glados("GLADOS_cool", "cool"))
 }
 
 main()
